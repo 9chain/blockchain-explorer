@@ -22,11 +22,7 @@ export class FooterView extends Component {
     return (
       <div>
         <div class="footer">
-          {'Hyperledger Explorer Client Version: '}{clientJson.version}&emsp;
-              {'Fabric Compatibility: '} {Version.map(version => {
-            return version;
-          })
-          }
+          {'Copyright ©2018 深圳市九链科技有限公司'}
         </div>
       </div>
     );

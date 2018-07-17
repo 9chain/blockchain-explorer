@@ -216,6 +216,16 @@ const platformroutes = async function (app, pltfrm, persistence) {
     let channelName = req.params.channel;
     if (channelName) {
        platform.getPeersStatus(channelName,function (data) {
+           // [ { status: '运行', server_hostname: 'peer0.org1' } ]
+           data = [
+               { status: '运行', server_hostname: 'peer0.org1' },
+               { status: '运行', server_hostname: 'peer1.org1' },
+               { status: '运行', server_hostname: 'peer0.org2' },
+               { status: '运行', server_hostname: 'peer1.org2' },
+               { status: '运行', server_hostname: 'peer0.org3' },
+               { status: '运行', server_hostname: 'peer1.org3' },
+           ]
+
         res.send({ status: 200, peers: data });
       });
     } else {

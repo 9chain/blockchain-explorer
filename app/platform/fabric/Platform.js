@@ -187,6 +187,11 @@ class Platform {
 
     channelInfo.channels.forEach(chan => {
       var channelName = chan.channel_id;
+      if (!channelName.startsWith("notaryinfo")) {
+        //console.log("skip channel " + channelName)
+        return
+      }
+
       let channel = client.newChannel(channelName);
       channel.addPeer(this.getDefaultPeer());
       this.setupOrderers(client,channel);

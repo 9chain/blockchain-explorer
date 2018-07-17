@@ -43,7 +43,7 @@ class BlockView extends Component {
         <div className={this.state.toggleClass ? "dark-theme" : ""}>
           <Card>
             <CardTitle className="dialogTitle">
-              <FontAwesome name="cube" />Block Details
+              <FontAwesome name="cube" />块详情
             </CardTitle>
             <CardBody>
               <span className="loading-wheel">
@@ -60,7 +60,7 @@ class BlockView extends Component {
           <div className="dialog">
             <Card>
               <CardTitle className="dialogTitle">
-                <FontAwesome name="cube" className="cubeIcon" />Block Details
+                <FontAwesome name="cube" className="cubeIcon" />块详情
                 <button onClick={this.handleClose} className="closeBtn">
                   <FontAwesome name="close" />
                 </button>
@@ -69,7 +69,7 @@ class BlockView extends Component {
                 <Table striped hover responsive className="table-striped">
                   <tbody>
                     <tr>
-                      <th>Channel name:</th>
+                      <th>通道:</th>
                       <td>{blockHash.channelname}</td>
                     </tr>
                     <tr>
@@ -77,24 +77,24 @@ class BlockView extends Component {
                       <td>{blockHash.id}</td>
                     </tr>
                     <tr>
-                      <th>Block Number</th>
+                      <th>区块高度</th>
                       <td>{blockHash.blocknum}</td>
                     </tr>
                     <tr>
-                      <th>Created at</th>
+                      <th>创建时间</th>
                       <td>{blockHash.createdt}</td>
                     </tr>
 
                     <tr>
-                      <th>Number of Transactions</th>
+                      <th>交易数</th>
                       <td>{blockHash.txcount}</td>
                     </tr>
                     <tr>
-                      <th>Block Hash</th>
+                      <th>块哈希</th>
                       <td>
                         {blockHash.blockhash}
                         <button className="copyBtn">
-                        <div className="copyMessage">Copy</div>
+                        <div className="copyMessage">复制</div>
                           <CopyToClipboard text={blockHash.blockhash}>
                             <FontAwesome name="copy" />
                           </CopyToClipboard>
@@ -102,11 +102,11 @@ class BlockView extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <th>Data Hash</th>
+                      <th>数据哈希</th>
                       <td>
                         {blockHash.datahash}
                         <button className="copyBtn">
-                        <div className="copyMessage">Copy</div>
+                        <div className="copyMessage">复制</div>
                           <CopyToClipboard text={blockHash.datahash}>
                             <FontAwesome name="copy" />
                           </CopyToClipboard>
@@ -114,11 +114,11 @@ class BlockView extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <th>Prehash</th>
+                      <th>上一个哈希</th>
                       <td>
                         {blockHash.prehash}
                         <button className="copyBtn">
-                        <div className="copyMessage">Copy</div>
+                        <div className="copyMessage">复制</div>
                           <CopyToClipboard text={blockHash.prehash}>
                             <FontAwesome name="copy" />
                           </CopyToClipboard>

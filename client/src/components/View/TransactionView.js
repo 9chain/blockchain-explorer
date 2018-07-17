@@ -79,8 +79,7 @@ export class TransactionView extends Component {
           <div className="dialog">
             <Card>
               <CardTitle className="dialogTitle">
-                <FontAwesome name="list-alt" className="listIcon" />Transaction
-                Details
+                <FontAwesome name="list-alt" className="listIcon" />交易详情
                 <button onClick={this.handleClose} className="closeBtn">
                   <FontAwesome name="close" />
                 </button>
@@ -89,11 +88,11 @@ export class TransactionView extends Component {
                 <Table striped hover responsive className="table-striped">
                   <tbody>
                     <tr>
-                      <th>Transaction ID:</th>
+                      <th>交易ID:</th>
                       <td>
                         {this.props.transaction.txhash}
                         <button className="copyBtn">
-                          <div className="copyMessage">Copy</div>
+                          <div className="copyMessage">复制</div>
                           <div className="copiedMessage">Copied</div>
                           <CopyToClipboard text={this.props.transaction.txhash}>
                             <FontAwesome name="copy" />
@@ -102,31 +101,11 @@ export class TransactionView extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <th>Validation Code:</th>
-                      <td>{this.props.transaction.validation_code}</td>
-                    </tr>
-                    <tr>
-                      <th>Payload Proposal Hash:</th>
-                      <td>{this.props.transaction.payload_proposal_hash}</td>
-                    </tr>
-                    <tr>
-                      <th>Creator MSP:</th>
-                      <td>{this.props.transaction.creator_msp_id}</td>
-                    </tr>
-                    <tr>
-                      <th>Endoser:</th>
-                      <td>{this.props.transaction.endorser_msp_id}</td>
-                    </tr>
-                    <tr>
-                      <th>Chaincode Name:</th>
+                      <th>智能合约:</th>
                       <td>{this.props.transaction.chaincodename}</td>
                     </tr>
                     <tr>
-                      <th>Type:</th>
-                      <td>{this.props.transaction.type}</td>
-                    </tr>
-                    <tr>
-                      <th>Time:</th>
+                      <th>时间:</th>
                       <td>
                         {moment(this.props.transaction.createdt)
                           .tz(moment.tz.guess())
@@ -134,51 +113,7 @@ export class TransactionView extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <th style={reads}>Reads:</th>
-                      <td>
-                        {" "}
-                        {this.props.transaction.read_set.map(function(
-                          item,
-                          index
-                        ) {
-                          return item === null ? (
-                            ""
-                          ) : (
-                            <li key={index}>
-                              <Typography
-                                variant="subheading"
-                                className="dialogCells"
-                              >
-                                {" "}
-                                {item.chaincode}
-                              </Typography>
-                              <ul>
-                                {item.set.map(function(x, index) {
-                                  var block_num = "";
-                                  var tx_num = "";
-                                  if (x.version !== null) {
-                                    block_num = x.version.block_num;
-                                    tx_num = x.version.tx_num;
-                                  }
-                                  return x === null ? (
-                                    ""
-                                  ) : (
-                                    <li key={index}>
-                                      key:{x.key} ,version:( block:{block_num},tx:{
-                                        tx_num
-                                      }){" "}
-                                    </li>
-                                  );
-                                })}
-                              </ul>
-                              <br />
-                            </li>
-                          );
-                        })}
-                      </td>
-                    </tr>
-                    <tr>
-                      <th style={writes}>Writes:</th>
+                      <th style={writes}>写入:</th>
                       <td>
                         {" "}
                         {this.props.transaction.write_set.map(function(
@@ -193,7 +128,7 @@ export class TransactionView extends Component {
                                 variant="subheading"
                                 className="dialogCells"
                               >
-                                {" "}
+                                {"智能合约 "}
                                 {item.chaincode}
                               </Typography>
                               <ul>
@@ -202,7 +137,7 @@ export class TransactionView extends Component {
                                     ""
                                   ) : (
                                     <li key={index}>
-                                      key:{x.key} ,is_delete:{x.is_delete.toString()},value:{
+                                      键:{x.key},   值:{
                                         x.value
                                       }{" "}
                                     </li>

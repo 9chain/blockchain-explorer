@@ -12,7 +12,7 @@ import {Nav, Navbar, NavbarBrand, NavbarToggler} from "reactstrap";
 import {HashRouter as Router, NavLink, Link} from "react-router-dom";
 import Switch from "material-ui/Switch";
 import AdminPanel from "../Panels/AdminPanel";
-import Logo from "../../static/images/Explorer_Logo.svg";
+import Logo from "../../static/images/fabric_9chain.png";
 import FontAwesome from "react-fontawesome";
 import Drawer from "material-ui/Drawer";
 import Button from "material-ui/Button";
@@ -283,16 +283,7 @@ export class HeaderView extends Component {
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
-                    DASHBOARD
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/network"
-                    className="dashButtons"
-                    activeClassName="activeTab"
-                  >
-                    NETWORK
+                    总览
                   </NavLink>
                 </li>
                 <li>
@@ -301,7 +292,7 @@ export class HeaderView extends Component {
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
-                    BLOCKS
+                    区块
                   </NavLink>
                 </li>
                 <li>
@@ -310,27 +301,10 @@ export class HeaderView extends Component {
                     className="dashButtons"
                     activeClassName="activeTab"
                   >
-                    TRANSACTIONS
+                    交易
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink
-                    to="/chaincodes"
-                    className="dashButtons"
-                    activeClassName="activeTab"
-                  >
-                    CHAINCODES
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to="/channels"
-                    className="dashButtons"
-                    activeClassName="activeTab"
-                  >
-                    CHANNELS
-                  </NavLink>
-                </li>
+
 
                 <div>
                   <Select
@@ -344,29 +318,7 @@ export class HeaderView extends Component {
                     options={this.state.channels}
                   />
                 </div>
-                {
-                  <div className="admin-buttons">
-                    <FontAwesome
-                      name="bell"
-                      className="bell"
-                      onClick={() => this.handleDrawOpen("notifyDrawer")}
-                    />
-                    <Badge
-                      className="navIcons"
-                      badgeContent={this.state.notifyCount}
-                      color="primary"
-                    />
-                  </div>
-                }
-                {/*
-              //Use when Admin functionality is required
-              <div className="admin-buttons">
-                <FontAwesome
-                  name="cog"
-                  className="cog"
-                  onClick={() => this.handleDrawOpen("adminDrawer")}
-                />
-              </div> */}
+
                 <div className="admin-buttons theme-switch">
                   <FontAwesome name="sun-o" className="sunIcon" />
                   <Switch

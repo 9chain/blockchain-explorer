@@ -56,7 +56,7 @@ export class NotificationsPanel extends Component {
               <List component="nav" className="notificationPanel">
                 <ListItem button>
                   <Typography variant="title" className="notificationPanel">
-                    NO NOTIFICATIONS
+                    没有通知
                   </Typography>
                 </ListItem>
               </List>

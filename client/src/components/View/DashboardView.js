@@ -48,7 +48,7 @@ export class DashboardView extends Component {
       ) {
         const block = blockList[i];
         const notify = {
-          title: `Block ${block.blocknum} `,
+          title: `区块 ${block.blocknum} `,
           type: "block",
           time: block.createdt,
           txcount: block.txcount,
@@ -87,7 +87,7 @@ export class DashboardView extends Component {
                       <h1 className="stat-count">{this.props.dashStats.latestBlock}</h1>
                     </Col>
                   </Row>
-                  BLOCKS
+                  区块
                     </div>
                 <div className="statistic vdivide">
                   <Row>
@@ -100,7 +100,7 @@ export class DashboardView extends Component {
                       <h1 className="stat-count">{this.props.dashStats.txCount}</h1>
                     </Col>
                   </Row>
-                  TRANSACTIONS
+                  交易
                    </div>
                 <div className="statistic vdivide">
                   <Row>
@@ -110,10 +110,10 @@ export class DashboardView extends Component {
                       </Avatar>
                     </Col>
                     <Col sm="4">
-                      <h1 className="stat-count">{this.props.dashStats.peerCount}</h1>
+                      <h1 className="stat-count">{6}</h1>
                     </Col>
                   </Row>
-                  NODES
+                  节点
                   </div>
                 <div className="statistic">
                   <Row>
@@ -123,10 +123,11 @@ export class DashboardView extends Component {
                       </Avatar>
                     </Col>
                     <Col sm="4">
-                      <h1 className="stat-count">{this.props.dashStats.chaincodeCount}</h1>
+                      {/*<h1 className="stat-count">{this.props.dashStats.chaincodeCount}</h1>*/}
+                        <h1 className="stat-count">{2}</h1>
                     </Col>
                   </Row>
-                  CHAINCODES
+                  智能合约
                   </div>
               </Card>
             </Col>
@@ -147,7 +148,7 @@ export class DashboardView extends Component {
                 <ChartStats />
               </Card>
               <Card className="dash-section center-column">
-                <h5 className="org-header">Transactions by Organziation</h5>
+                <h5 className="org-header">组织交易比例</h5>
                 <hr />
                 <OrgPieChart transactionByOrg={this.props.transactionByOrg} />
               </Card>

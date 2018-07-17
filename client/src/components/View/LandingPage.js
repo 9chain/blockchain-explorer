@@ -5,7 +5,7 @@
 import React, { Component } from 'react';
 import Slider from 'react-slick';
 import { connect } from 'react-redux';
-import Logo from '../../static/images/Explorer_Logo.svg';
+import Logo from '../../static/images/fabric_9chain.png';
 import { chartOperations } from '../../state/redux/charts/'
 import { tableOperations } from '../../state/redux/tables/'
 import { chartSelectors } from '../../state/redux/charts/'
@@ -48,8 +48,8 @@ export class LandingPage extends Component {
         slidesToScroll: 1
       },
       logoStyle: {
-        width: '520px',
-        height: '100px'
+        width: '448px',
+        height: '150px'
       },
       hasDbError: false
     }
@@ -95,9 +95,9 @@ export class LandingPage extends Component {
         <div className="landing" >
           <img src={Logo} style={this.state.logoStyle} alt="Hyperledger Logo" />
           <Slider {...this.state.settings}>
-            <div><h3>ACCESSING THE NETWORK</h3></div>
-            <div><h3>CONNECTING TO CHANNEL</h3></div>
-            <div><h3>LOADING BLOCKS</h3></div>
+            <div><h3>访问网络中</h3></div>
+            <div><h3>连接中</h3></div>
+            <div><h3>加载区块中</h3></div>
           </Slider>
         </div>
       </div>

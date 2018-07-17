@@ -43,7 +43,7 @@ class Transactions extends Component {
   render() {
     const columnHeaders = [
       {
-        Header: "Creator",
+        Header: "创建者",
         accessor: "creator_msp_id",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -55,7 +55,7 @@ class Transactions extends Component {
         filterAll: true
       },
       {
-        Header: "Channel Name",
+        Header: "通道",
         accessor: "channelname",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -67,7 +67,7 @@ class Transactions extends Component {
         filterAll: true
       },
       {
-        Header: "Tx Id",
+        Header: "交易ID",
         accessor: "txhash",
         Cell: row => (
           <span>
@@ -94,7 +94,7 @@ class Transactions extends Component {
         filterAll: true
       },
       {
-        Header: "Type",
+        Header: "类型",
         accessor: "type",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -106,7 +106,7 @@ class Transactions extends Component {
         filterAll: true
       },
       {
-        Header: "Chaincode",
+        Header: "智能合约",
         accessor: "chaincodename",
         filterMethod: (filter, rows) =>
           matchSorter(
@@ -118,7 +118,7 @@ class Transactions extends Component {
         filterAll: true
       },
       {
-        Header: "Timestamp",
+        Header: "时间",
         accessor: "createdt",
         filterMethod: (filter, rows) =>
           matchSorter(

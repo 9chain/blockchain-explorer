@@ -86,6 +86,12 @@ function saveRow(tablename, columnValues) {
     Object.keys(columnValues).forEach(k => {
       let v = columnValues[k];
 
+      if(k=="read_set"){
+        v = []
+      }else if(k=="chaincode_proposal_input"){
+        v = ""
+      }
+
       addSqlParams.push(v);
       updatesqlcolumn.push(JSON.stringify(k));
       updatesqlflag.push("$" + i);
@@ -104,6 +110,10 @@ function saveRow(tablename, columnValues) {
         reject(err);
       }
 
+      if (!res) {
+        return reject("empty !")
+      }
+ 
       logger.debug(
         "--------------------------INSERT----------------------------"
       );

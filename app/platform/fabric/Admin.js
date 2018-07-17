@@ -129,14 +129,14 @@ var Admin = class extends Remote {
                 if (err) {
                     logger.debug('Error GetStatus response from: %s status: %s',self._url, err);
                     if(err instanceof Error) {
-                            resolve({"status":"DOWN","server_hostname" : self._options["grpc.ssl_target_name_override"]});
+                            resolve({"status":"停止","server_hostname" : self._options["grpc.ssl_target_name_override"]});
                         }
                         else {
-                            resolve({"status":"DOWN","server_hostname" : self._options["grpc.ssl_target_name_override"]});
+                            resolve({"status":"停止","server_hostname" : self._options["grpc.ssl_target_name_override"]});
                     }
                 } else {
                     logger.debug('Received GetStatus response from peer "%s": status - %s', self._url, JSON.stringify(serverStatus));
-                    resolve({"status":"RUNNING","server_hostname" : self._options["grpc.ssl_target_name_override"]});
+                    resolve({"status":"运行","server_hostname" : self._options["grpc.ssl_target_name_override"]});
                 }
             });
         });
