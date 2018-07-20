@@ -262,11 +262,11 @@ export class HeaderView extends Component {
       <div>
         {/* production */}
         {/* development */}
-        <Websocket
+        {/*<Websocket
           url={webSocketUrl}
           onMessage={this.handleData.bind(this)}
           reconnect={true}
-        />
+        />*/}
         <Router>
           <div>
             <Navbar className="navbar-header" expand="md" fixed="top">
